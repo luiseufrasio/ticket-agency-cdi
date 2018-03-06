@@ -1,13 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.packtpub.wflydevelopment.chapter4</groupId>
-  <artifactId>ticket-agency-cdi</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  
-  <name>ticket-agency-cdi Maven Webapp</name>
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.packtpub.wflydevelopment.chapter4</groupId>
+	<artifactId>ticket-agency-cdi</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>ticket-agency-cdi Maven Webapp</name>
+
+	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -20,8 +21,13 @@
 			<version>3.1.4.GA</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>24.0-jre</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
@@ -59,5 +65,5 @@
 
 		</plugins>
 	</build>
-	
+
 </project>
