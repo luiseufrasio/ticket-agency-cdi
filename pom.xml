@@ -36,7 +36,7 @@
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>1.0.2.Final</version>
 				<configuration>
-					<filename>${project.build.finalName}.jar</filename>
+					<filename>${project.build.finalName}.war</filename>
 				</configuration>
 				<dependencies>
 					<dependency>
