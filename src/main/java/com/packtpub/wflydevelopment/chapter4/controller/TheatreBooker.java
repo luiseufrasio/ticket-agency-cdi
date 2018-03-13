@@ -41,7 +41,7 @@ public class TheatreBooker implements Serializable {
 
 	public void bookSeat(int seatId) {
 		logger.info("Booking seat " + seatId);
-		int seatPrice = box.getSeatPrice(seatId);
+		final int seatPrice = box.getSeatPrice(seatId);
 
 		if (seatPrice > money) {
 			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Not enough money",
@@ -52,7 +52,7 @@ public class TheatreBooker implements Serializable {
 
 		box.buyTicket(seatId);
 
-		FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Booked!",
+		final FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Booked!",
 				"Booking sucessful");
 		facesContext.addMessage(null, m);
 		logger.info("Seat booked.");

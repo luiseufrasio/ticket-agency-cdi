@@ -1,2 +1,3 @@
 # ticket-agency-cdi
-CDI Examples
+CDI Examples adapted to WildFly 11
+richfaces 4.5

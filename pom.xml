@@ -1,12 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.packtpub.wflydevelopment.chapter4</groupId>
 	<artifactId>ticket-agency-cdi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	<version>1.0</version>
 
 	<name>ticket-agency-cdi Maven Webapp</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -15,22 +20,26 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.jboss.logging</groupId>
 			<artifactId>jboss-logging</artifactId>
 			<version>3.1.4.GA</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>24.0-jre</version>
+			<groupId>org.richfaces</groupId>
+			<artifactId>richfaces</artifactId>
+			<version>4.5.10.Final</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
+			<!-- WildFly plugin to deploy the application -->
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
@@ -38,32 +47,17 @@
 				<configuration>
 					<filename>${project.build.finalName}.war</filename>
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.wildfly</groupId>
-						<artifactId>wildfly-cli</artifactId>
-						<version>8.2.1.Final</version>
-						<exclusions>
-							<exclusion>
-								<groupId>sun.jdk</groupId>
-								<artifactId>jconsole</artifactId>
-							</exclusion>
-						</exclusions>
-					</dependency>
-				</dependencies>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
+					<!-- enforce Java 8 -->
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
-
 </project>

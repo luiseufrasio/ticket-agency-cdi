@@ -58,13 +58,13 @@ public class TheatreBox {
 	public int getSeatPrice(int seatId) {
 		return getSeat(seatId).getPrice();
 	}
-	
+
 	@Lock(WRITE)
 	public void buyTicket(int seatId) {
 		final Seat seat = getSeat(seatId);
 		final Seat bookedSeat = seat.getBookedSeat();
 		addSeat(bookedSeat);
-		
+
 		seatEvent.fire(bookedSeat);
 	}
 
