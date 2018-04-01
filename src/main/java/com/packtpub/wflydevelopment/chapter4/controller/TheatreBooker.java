@@ -12,9 +12,11 @@ import javax.inject.Named;
 import org.jboss.logging.Logger;
 
 import com.packtpub.wflydevelopment.chapter4.boundary.TheatreBox;
+import com.packtpub.wflydevelopment.chapter4.util.Logged;
 
 @Named
 @SessionScoped
+@Logged
 public class TheatreBooker implements Serializable {
 
 	private static final long serialVersionUID = 5051355626337120253L;
